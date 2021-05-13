@@ -1,104 +1,120 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WaitBlock options</title>
-    <style>
-      body {
-        font: normal 14px/22px sans-serif;
-        width: 500px;
-      }
 
-      section {
-        margin: 10px;
-      }
+<head>
+  <title>WaitBlock options</title>
+  <style>
+    body {
+      font: normal 14px/22px sans-serif;
+      width: 500px;
+    }
 
-      input {
-        width: 40%;
-      }
+    section {
+      margin: 10px;
+    }
 
-      textarea {
-        width: 100%;
-        resize: none;
-        border: 1px solid #cbcbcb;
-      }
+    input {
+      width: 40%;
+    }
 
-      label {
-        font-weight: bold;
-      }
+    textarea {
+      width: 100%;
+      resize: none;
+      border: 1px solid #cbcbcb;
+    }
 
-      #flash {
-        color: green;
-      }
+    label {
+      font-weight: bold;
+    }
 
-      .note {
-        font-size: 0.8em;
-        font-style: italic;
-      }
-    </style>
-  </head>
-  <body>
-    <section>
-      <div>
-        <div><label for="waitTime">Wait time</label></div>
-        <em class="note">
-          The time you will wait for a blocked page to load.
-        </em>
-      </div>
+    #flash {
+      color: green;
+    }
 
-      <div>
-        <input type="range" id="waitTime" min="0" max="300" step="5">
-        <output for="waitTime" id="waitTimeOutput"></output>
-      </div>
-    </section>
+    .note {
+      font-size: 0.8em;
+      font-style: italic;
+    }
+  </style>
+</head>
 
-    <section>
-      <div>
-        <div><label for="blockTime">Allowed time</label></div>
-        <em class="note">
-          The time allowed on a page, before it gets blocked again.
-        </em>
-      </div>
+<body>
+  <section>
+    <div>
+      <div><label for="waitTime">Wait time</label></div>
+      <em class="note">
+        The time you will wait for a blocked page to load.
+      </em>
+    </div>
 
-      <div>
-        <input type="range" id="blockTime" min="0" max="60" step="1">
-        <output for="blockTime" id="blockTimeOutput"></output>
-      </div>
-    </section>
+    <div>
+      <input type="range" id="waitTime" min="0" max="300" step="5">
+      <output for="waitTime" id="waitTimeOutput"></output>
+    </div>
+  </section>
 
-    <section>
-      <div>
-        <div><label for"blocklist">Blocklist</label></div>
-        <em class="note">
-          Comma separated list of domains to block (e.g. facebook.com, reddit.com)
-        </em>
-      </div>
+  <section>
+    <div>
+      <div><label for="blockTime">Allowed time</label></div>
+      <em class="note">
+        The time allowed on a page, before it gets blocked again.
+      </em>
+    </div>
 
-      <div>
-        <textarea id="blocklist" rows="3"></textarea>
-      </div>
-    </section>
+    <div>
+      <input type="range" id="blockTime" min="0" max="60" step="1">
+      <output for="blockTime" id="blockTimeOutput"></output>
+    </div>
+  </section>
 
-    <section>
-      <div>
-        <div><label for"whitelist">Whitelist</label></div>
-        <em class="note">
-          Comma separated list of allowed subdomains (e.g. l.facebook.com)
-        </em>
-      </div>
+  <section>
+    <div>
+      <div><label for"blocklist">Blocklist</label></div>
+      <em class="note">
+        Comma separated list of domains to block (e.g. facebook.com, reddit.com)
+      </em>
+    </div>
 
-      <div>
-        <textarea id="whitelist" rows="3"></textarea>
-      </div>
-    </section>
+    <div>
+      <textarea id="blocklist" rows="3"></textarea>
+    </div>
+  </section>
 
-    <section>
-      <div>
-        <button id="saveOptions">Save</button>
-        <span id="flash"></span>
-      </div>
-    </section>
+  <section>
+    <div>
+      <div><label for"whitelist">Whitelist</label></div>
+      <em class="note">
+        Comma separated list of allowed subdomains (e.g. l.facebook.com)
+      </em>
+    </div>
 
-    <script type="text/javascript" src="js/waitblock.js"></script>
-    <script type="text/javascript" src="js/options.js"></script>
-  </body>
+    <div>
+      <textarea id="whitelist" rows="3"></textarea>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <div><label for"redirect">Redirect</label></div>
+      <em class="note">
+        Redirect url
+      </em>
+    </div>
+
+    <div>
+      <input type="text" id="redirect">
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <button id="saveOptions">Save</button>
+      <span id="flash"></span>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="js/waitblock.js"></script>
+  <script type="text/javascript" src="js/options.js"></script>
+</body>
+
 </html>
